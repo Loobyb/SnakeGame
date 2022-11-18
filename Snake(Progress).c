@@ -9,45 +9,43 @@ int a,b, fruit1, fruit2, randx, randy;
 int height, width;
 int score;
 int head;
-int lose = 0;
+int lose = 0; // GameOver
 //Set Fruit to be within boundaries
 void fruit(){
-
-    //Stores height and width for fruit
+//Stores height and width for fruit
     a = height / 5;
     b = width / 5;
+//Label == Fruit
 label1:
 
     fruit1 = rand() % 20;
     if(randx == 0){
         goto label1;
     }
-   
-
+  
 label2:
 
     fruit2 = rand() % 20; 
     if(randy == 0){
         goto label2;
-
     }
     
     score = 0;
-
-   
 }
 
 void PlaceFruit(){
      if(fruit1 == head && fruit2 == head ){
         int place1 = 0;
-        
-
-
-
-
-    }
+  }
 }
+//Set Up Snake (In- Progress)
+void setupSnake() {
+    int length = LINES * COLS; // maximum possible snake size is the entire area of the play space.
+    snake = (struct Vector*)malloc(sizeof(struct Vector) * length); // snake is an array of vectors.
+    snake[0] = head; // head is always first index of snake array.
+} 
 
+// Movement of Snake (In - Progress)
 int main(int ac, char *av[]){
      initscr();              // initialize the curses library
     clear();                // clear the screen
